@@ -1,0 +1,12 @@
+numpy
+matplotlib
+gymnasium
+stable-baselines3
+torch
+torchvision
+opencv-python
+ultralytics
+casadi
+scipy
+pyyaml
+tensorboard

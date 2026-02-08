@@ -1,0 +1,48 @@
+# Quadrotor Parameters — Crazyflie 2.x
+# Reference: Bitcraze Crazyflie 2.x documentation + Forster et al. (2015)
+
+quadrotor:
+  name: "Crazyflie 2.x"
+
+  # Physical properties
+  mass: 0.027            # kg (27 grams)
+  arm_length: 0.0397     # m (distance from center to motor)
+  
+  # Moments of inertia (kg·m²)
+  inertia:
+    Ixx: 1.4e-5
+    Iyy: 1.4e-5
+    Izz: 2.17e-5
+
+  # Motor/propeller parameters
+  thrust_coefficient: 3.16e-10    # N/(rad/s)² — kf
+  torque_coefficient: 7.94e-12    # N·m/(rad/s)² — km
+  max_rpm: 21702.0                # maximum motor RPM
+  min_rpm: 0.0                    # minimum motor RPM
+  max_thrust_per_motor: 0.1597    # N (at max RPM)
+  total_max_thrust: 0.6388        # N (4 motors)
+
+  # Aerodynamic drag coefficients
+  drag:
+    linear:
+      x: 0.01     # N/(m/s) — translational drag
+      y: 0.01
+      z: 0.01
+    rotational:
+      x: 0.0001   # N·m/(rad/s) — rotational drag
+      y: 0.0001
+      z: 0.0001
+
+  # Environment
+  gravity: 9.81          # m/s²
+
+  # PID gains (for hover controller)
+  pid:
+    position:
+      kp: [2.0, 2.0, 2.0]
+      ki: [0.0, 0.0, 0.1]
+      kd: [1.5, 1.5, 1.5]
+    velocity:
+      kp: [5.0, 5.0, 5.0]
+      ki: [0.1, 0.1, 0.1]
+      kd: [2.5, 2.5, 2.5]
